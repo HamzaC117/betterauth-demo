@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BetterAuth Demo Project
 
-## Getting Started
+This project is a **Next.js** application that demonstrates the integration of **BetterAuth** for user authentication. It allows users to sign up, log in, and manage their sessions securely.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- User registration and login
+- Session management
+- Password hashing and security
+- Responsive design with Tailwind CSS
+- Debugging and logging for API requests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Next.js**: A React framework for building server-side rendered applications.
+- **BetterAuth**: A library for handling authentication.
+- **PostgreSQL**: A relational database for storing user data.
+- **Prisma**: An ORM for database interactions.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **TypeScript**: A superset of JavaScript that adds static types.
 
-To learn more about Next.js, take a look at the following resources:
+## Setup Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository**:   ```bash
+   git clone https://github.com/HamzaC117/betterauth-demo.git
+   cd betterauth-demo   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**:   ```bash
+   npm install   ```
 
-## Deploy on Vercel
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory and add the following variables:   ```
+   DATABASE_URL=your_database_url
+   BETTER_AUTH_URL=http://localhost:3000
+   BETTER_AUTH_SECRET=your_secret_key
+   NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run database migrations**:
+   Ensure you have Prisma set up and run the migrations:   ```bash
+   npx prisma migrate dev   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Start the development server**:   ```bash
+   npm run dev   ```
+
+6. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+
+## Usage
+
+- **Sign Up**: Users can create an account by providing their name, email, and password.
+- **Log In**: Users can log in using their email and password.
+- **Dashboard**: After logging in, users will be redirected to their dashboard where they can see their information.
+
+## Deployment
+
+To deploy this application, you can use platforms like Vercel or Heroku. Make sure to set the environment variables in your deployment settings.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or features, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
